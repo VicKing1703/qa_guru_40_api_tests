@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.*;
 
 @DisplayName("Тесты по ручке GET /wd/hub/status")
 public class WdHubStatusTests extends TestBase {
@@ -83,7 +83,7 @@ public class WdHubStatusTests extends TestBase {
                 .log().all()
                 .statusCode(200)
                 .body(matchesJsonSchemaInClasspath("schemas/WdHubStatus_response_schema.json"))
-                .body("value.message", org.hamcrest.Matchers.containsString("Selenoid 1.11.3 built at"));
+                .body("value.message", containsString("Selenoid 1.11.3 built at"));
     }
 
     @DisplayName("Тест значения параметра \"ready\"")
