@@ -82,7 +82,7 @@ public class WdHubStatusTests extends TestBase {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/WdHubStatus_response_schema.json"))
+                .body(matchesJsonSchemaInClasspath("schemas/wdHubStatus_response_schema.json"))
                 .body("value.message", containsString("Selenoid 1.11.3 built at"));
     }
 
@@ -99,7 +99,7 @@ public class WdHubStatusTests extends TestBase {
                 .then()
                 .log().all()
                 .statusCode(200)
-                .body(matchesJsonSchemaInClasspath("schemas/WdHubStatus_response_schema.json"))
+                .body(matchesJsonSchemaInClasspath("schemas/wdHubStatus_response_schema.json"))
                 .body("value.ready", is(true));
     }
 }
