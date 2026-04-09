@@ -5,8 +5,8 @@ import org.junit.jupiter.api.BeforeAll;
 
 public class TestBase {
 
-    static String statusPath = "/status";
-    static String wdHubStatusPath = "/wd/hub/status";
+    protected static final String statusPath = "/status";
+    protected static final String wdHubStatusPath = "/wd/hub/status";
 
     @BeforeAll
     public static void setUp() {
