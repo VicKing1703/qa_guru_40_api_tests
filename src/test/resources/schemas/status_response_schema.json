@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Welcome5",
+  "definitions": {
+    "Welcome5": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "used": {
+          "type": "integer"
+        },
+        "queued": {
+          "type": "integer"
+        },
+        "pending": {
+          "type": "integer"
+        },
+        "browsers": {
+          "$ref": "#/definitions/Browsers"
+        }
+      },
+      "required": [
+        "browsers",
+        "pending",
+        "queued",
+        "total",
+        "used"
+      ],
+      "title": "Welcome5"
+    },
+    "Browsers": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "chrome": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Chrome"
+          }
+        },
+        "firefox": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Chrome"
+          }
+        },
+        "opera": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Chrome"
+          }
+        }
+      },
+      "required": [
+        "chrome",
+        "firefox",
+        "opera"
+      ],
+      "title": "Browsers"
+    },
+    "Chrome": {
+      "type": "object",
+      "additionalProperties": false,
+      "title": "Chrome"
+    }
+  }
+}
